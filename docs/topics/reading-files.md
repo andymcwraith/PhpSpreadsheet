@@ -168,7 +168,7 @@ Once you have created a reader object for the workbook that you want to
 load, you have the opportunity to set additional options before
 executing the `load()` method.
 
-All of these options can be set by calling the appropriate methods against the Reader (as described below), but some options (those with only two possible values) can also be set through flags, either by calling the Reader's `setFlags()` method, or passing the flags as an argument in the call to `load()`.
+All of these options can be set by calling the appropriate methods against the Reader (as described below), but some options (those with only two possible values) can also be set through flags, by passing the flags as an argument in the call to `load()`.
 Those options that can be set through flags are:
 
 Option             | Flag                                | Default
@@ -179,17 +179,6 @@ Data Only          | IReader::READ_DATA_ONLY             | Read data, structure 
 Charts             | IReader::LOAD_WITH_CHARTS           | Don't read charts
 
 Several flags can be combined in a single call:
-```php
-$inputFileType = 'Xlsx';
-$inputFileName = './sampleData/example1.xlsx';
-
-/**  Create a new Reader of the type defined in $inputFileType  **/
-$reader = \PhpOffice\PhpSpreadsheet\IOFactory::createReader($inputFileType);
-/** Set additional flags before the call to load() */
-$reader->setFlags(IReader::IGNORE_EMPTY_CELLS | IReader::LOAD_WITH_CHARTS);
-$reader->load($inputFileName);
-```
-or
 ```php
 $inputFileType = 'Xlsx';
 $inputFileName = './sampleData/example1.xlsx';
